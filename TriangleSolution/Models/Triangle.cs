@@ -1,4 +1,6 @@
-﻿namespace Triangles.Models
+﻿using System;
+
+namespace Triangles.Models
 {
     public class Triangle
     {
@@ -10,12 +12,12 @@
         {
             this.side1 = side1;
             this.side2 = side2;
-            this.side3 = side3;           
+            this.side3 = side3;
         }
 
-        public double Side1 
+        public double Side1
         {
-            get { return side1; } 
+            get { return side1; }
             set { side1 = value; }
         }
         public double Side2
@@ -27,6 +29,11 @@
         {
             get { return side3; }
             set { side3 = value; }
-        }        
+        }
+
+        public static bool AreEqual(double a, double b)
+        {
+            return Math.Abs(a - b) < (Math.Abs(a) * 0.00001);
+        }
     }
 }
